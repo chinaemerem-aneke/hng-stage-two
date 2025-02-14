@@ -65,7 +65,7 @@
     @media screen and (max-width: 768px) {
       .upload-box {
         width: 100%;
-        padding: 32px;
+        padding: px;
       }
     
       .upload-area {
