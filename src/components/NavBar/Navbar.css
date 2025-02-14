@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Road+Rage&display=swap');
+
+nav {
+  width: 80vw;
+  font-family: "JejuMyeongjo", serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem auto;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #0E464F;
+  border-radius: 0.5rem;
+  background: #02191D; /* Add background color to make it visible */
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+li a {
+  text-decoration: none;
+  color: #B3B3B3;
+}
+
+li a:hover,
+li a:focus {
+  color: #fff;
+  transition: 0.3s ease-out;
+}
+
+.myTicketBtn {
+  outline: none;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Mobile breakpoint */
+@media screen and (max-width: 768px) {
+  nav {
+    width: 100%; /* Full width for mobile */
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Position at the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure it stays above other content */
+    margin: 0; /* Remove margin */
+    padding: 0.5rem 1rem; 
+    border-radius: 0; /* Remove border radius for full-width */
+    border: none; 
+    border-bottom: 1px solid #0E464F; 
+  }
+
+  ul {
+    display: none; /* Hide the navigation links */
+  }
+
+  .myTicketBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem; 
+  }
+}

@@ -1,0 +1,47 @@
+.btn {
+      flex: 1;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      border: 1px solid transparent;
+    }
+    
+    /* Primary Button */
+    .btn.primary {
+      background-color: #26B7CB;
+      color: white;
+      border: none;
+    }
+    
+    .btn.primary:hover {
+      background-color: #3dd8ed;
+    }
+    
+    /* Secondary Button */
+    .btn.secondary {
+      background-color: transparent;
+      color: #26B7CB;
+      border: 1px solid #197686;
+    }
+    
+    .btn.secondary:hover {
+      background-color: rgba(38, 183, 203, 0.1);
+    }
+    
+    /* Disabled State */
+    .btn:disabled {
+      background-color: #a0a0a0;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    @media screen and (max-width: 768px) {  
+      .btn1 {
+        order: 1;
+      }
+    }
+    
+    
