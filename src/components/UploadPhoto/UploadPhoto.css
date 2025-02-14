@@ -63,13 +63,15 @@
 
     
     @media screen and (max-width: 768px) {
-      .upload-box {
-        width: 100%;
-        padding: 32px;
+      .upload-box { 
+            background: transparent;
+            border: none;
+            width: 100%;
+            padding: 32px;
       }
     
       .upload-area {
-        width: 200px;
-        height: 200px;
+            width: 200px;
+            height: 200px;
       }
     }
