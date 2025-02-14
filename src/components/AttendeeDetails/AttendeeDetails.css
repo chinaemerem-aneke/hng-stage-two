@@ -86,10 +86,11 @@
   
 }
 
-/* .input-group input:focus,
+.input-group input:focus,
 .input-group textarea:focus {
-  background:#08252B;
-} */
+  border: 1px solid #197686;
+  transition: .3s ease-in-out;
+}
 
 
 @media screen and (max-width: 768px) {
