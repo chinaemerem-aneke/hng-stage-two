@@ -48,7 +48,7 @@ const AttendeeDetails = ({ onBack, onNext }) => {
 
           <div className="input-group">
             <label>Enter your name</label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} />
+            <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe"/>
           </div>
 
           <div className="input-group">
