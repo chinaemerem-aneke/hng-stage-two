@@ -43,14 +43,14 @@ li a:focus {
 /* Mobile breakpoint */
 @media screen and (max-width: 768px) {
   nav {
-    width: 100%; /* Full width for mobile */
-    position: fixed; /* Fix the navbar at the top */
-    top: 0; /* Position at the top */
-    left: 0; /* Align to the left */
-    z-index: 1000; /* Ensure it stays above other content */
-    margin: 0; /* Remove margin */
+    width: 100%;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000;
+    margin: 0; 
     padding: 0.5rem 1rem; 
-    border-radius: 0; /* Remove border radius for full-width */
+    border-radius: 0; 
     border: none; 
     border-bottom: 1px solid #0E464F; 
   }

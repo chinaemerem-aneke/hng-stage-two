@@ -5,7 +5,10 @@ import ticz from '../../assets/ticz.png';
 import arrow from '../../assets/arrow.png';
 
 const Navbar = () => {
-  
+  const handleMyTicketsClick = () => {
+    alert('My Tickets button clicked!');
+  };
+
   return (
     <nav>
       <div className="flex">
