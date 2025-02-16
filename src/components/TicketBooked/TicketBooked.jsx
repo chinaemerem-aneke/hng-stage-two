@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import "./TicketBooked.css";
 import "../../index.css";
@@ -6,11 +6,22 @@ import "../TicketSelection/TicketSelection.css";
 import background from '../../assets/bg.png';
 import BarCode from '../../assets/bar_code.png';
 
-const TicketBooked = ({ attendeeData, ticketData }) => {
+const TicketBooked = ({ setStep }) => {
+  const [attendeeData, setAttendeeData] = useState(null);
+  const [ticketData, setTicketData] = useState(null);
+
+  useEffect(() => {
+    const savedAttendeeData = JSON.parse(localStorage.getItem("attendeeDetails"));
+    const savedTicketData = JSON.parse(localStorage.getItem("ticketDetails"));
+
+    if (savedAttendeeData) setAttendeeData(savedAttendeeData);
+    if (savedTicketData) setTicketData(savedTicketData);
+  }, []);
+
   const handleDownload = () => {
     alert("Your ticket is downloading...");
-  };
-
+  }
+  
   return (
     <div className="ticket-booked">
       <div className="card">
@@ -38,10 +49,10 @@ const TicketBooked = ({ attendeeData, ticketData }) => {
                 <p>📍 04 Rumens Road, Ikoyi, Lagos</p>
                 <p>📅 March 15, 2025 | 7:00 PM</p>
               </div>
-              <div className="profile-photo">
-                {attendeeData?.profilePhoto && (
+              <div className="upload-box">
+                {attendeeData?.imageURL && (
                   <img
-                    src={URL.createObjectURL(attendeeData.profilePhoto)}
+                    src={attendeeData.imageURL}
                     alt="Profile"
                     className="profile-preview"
                   />
@@ -49,34 +60,32 @@ const TicketBooked = ({ attendeeData, ticketData }) => {
               </div>
               <div className="form-details">
                 <div className="name">
-                  <h3>Name:</h3>
-                  <p>{attendeeData?.name}</p>
+                  <h3>Enter your name:</h3>
+                  <p>{attendeeData?.name || "N/A"}</p>
                 </div>
                 <div className="email">
-                  <h3>Email:</h3>
-                  <p>{attendeeData?.email}</p>
+                  <h3>Enter your email*:</h3>
+                  <p>{attendeeData?.email || "N/A"}</p>
                 </div>
                 <div className="ticket-type">
                   <h3>Ticket Type:</h3>
-                  <p>{ticketData?.access}</p>
+                  <p>{ticketData?.ticketType || "N/A"}</p>
                 </div>
                 <div className="ticket-for">
                   <h3>Ticket for:</h3>
-                  <p>{ticketData?.quantity}</p>
+                  <p>{ticketData?.ticketNumber || "N/A"}</p>
                 </div>
                 <div className="special-request">
                   <h3>Special request:</h3>
-                  <p>{ticketData?.quantity}</p>
+                  <p>{attendeeData?.about || "N/A"}</p>
                 </div>
-
-
               </div>
               <img src={BarCode} alt="barcode" className="barcode" />
             </div>
           </div>
 
           <div className="button-group">
-            <Button className="btn1" variant="secondary" onClick={handleDownload}>
+            <Button className="btn1" variant="secondary" onClick={() => { setStep(1); localStorage.clear(); }}>
               Book Another Ticket
             </Button>
             <Button className="btn2" variant="primary" onClick={handleDownload}>
