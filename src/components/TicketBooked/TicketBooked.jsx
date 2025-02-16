@@ -65,7 +65,7 @@ const TicketBooked = ({ attendeeData, ticketData }) => {
                   <p>{ticketData?.quantity}</p>
                 </div>
                 <div className="special-request">
-                  <h3>Special request:</h3>
+                  <h3>Special request: </h3>
                   <p>{ticketData?.quantity}</p>
                 </div>
 
