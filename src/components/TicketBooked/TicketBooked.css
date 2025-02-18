@@ -46,6 +46,7 @@
   background: #08252B;
 }
 
+/* Ticket container */
 .ticket {
   position: relative;
   margin-bottom: 24px;
@@ -60,26 +61,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -50%);
   width: 90%;
   background: rgba(8, 37, 43, 0.9);
-  border: 1px solid #0E464F;
   border-radius: 16px;
   padding: 20px;
   text-align: center;
-}
-
-.profile-photo {
-  background: rgba(0, 0, 0, 0.2);
-  height: 200px;
-  width: 200px;
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 1.5rem;
-  border: 1px solid #197686;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Event details */
@@ -91,7 +78,7 @@
   background: radial-gradient(57.42% 106.59% at 14.02% 32.06%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), rgba(10, 12, 17, 0.10);
   backdrop-filter: blur(7px);
   text-align: center;
-  padding: .5rem;
+  padding: 1rem;
 }
 
 .event-details h1 {
@@ -107,63 +94,152 @@
   margin: 8px 0;
 }
 
+/* Barcode container */
+.barcode-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.barcode {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
 .title {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 5px;
 }
 
 .title h1 {
   font-size: 2.5rem;
   font-family: "Alatsi", serif;
 }
-
-.title p {
-  margin-bottom: 2rem;
+/* General page styling */
+.ticket-booked {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 40px;
+  border: 1px solid #0E464F;
+  background: radial-gradient(52.52% 32.71% at 50% 97.66%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), #02191D;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
-/* Form details grid */
-.form-details {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  grid-template-rows: auto; /* Auto rows */
-  gap: 16px; /* Gap between grid items */
+/* Card header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-family: 'JejuMyeongjo', serif;
+}
+
+.step {
+  color: #a0a0a0;
+  font-size: 0.875rem;
+}
+
+.progress3 {
+  width: 97.7778%;
+  height: 100%;
+  background-color: #14b8a6;
+  border-radius: 9999px;
+}
+
+/* Main card */
+.main-card {
+  border-radius: 12px;
+  padding: 24px;
+  border-radius: 32px;
+  border: 1px solid #0E464F;
+  background: #08252B;
+}
+
+/* Ticket container */
+.ticket {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.ticket-background {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.ticket-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  background: rgba(8, 37, 43, 0.9);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Event details */
+.event-details {
+  border-radius: 24px;
+  border-right: 2px solid #07373F;
+  border-bottom: 2px solid #07373F;
+  border-left: 2px solid #07373F;
+  background: radial-gradient(57.42% 106.59% at 14.02% 32.06%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), rgba(10, 12, 17, 0.10);
+  backdrop-filter: blur(7px);
+  text-align: center;
+  padding: 1rem;
+}
+
+.event-details h1 {
+  font-family: "Road Rage", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 100%;
+  margin-bottom: .8rem;
+}
+
+.event-details p {
+  color: #a0a0a0;
+  margin: 8px 0;
+}
+
+/* Barcode container */
+.barcode-container {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.form-details h3 {
-  font-size: 1rem;
-  color: #B3B3B3;
+.barcode {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
 }
 
-.name {
-  grid-column: 1 / 2; 
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
-.email {
-  grid-column: 2 / 3;
+.title h1 {
+  font-size: 2.5rem;
+  font-family: "Alatsi", serif;
 }
-
-.ticket-type {
-  grid-column: 1 / 2; 
-}
-
-.ticket-for {
-  grid-column: 2 / 3;
-}
-
-.special-request {
-  grid-column: 1 / -1; 
-}
-
-.name,
-  .email,
-  .ticket-type,
-  .ticket-for,
-  .special-request {
-   text-align: left;
-  }
 
 /* Button group */
 .button-group {
@@ -173,27 +249,27 @@
 
 /* Mobile responsive */
 @media screen and (max-width: 768px) {
-  .title h1 {
-    font-size: 1.5rem;
-  }
-
-  .title p {
-    font-size: .9rem;
-  }
-
   .button-group {
     flex-direction: column;
   }
 
-  /* .form-details {
-    grid-template-columns: 1fr; 
+  .btn-cancel {
+    order: 1;
+  }
+                                                                    }
+/* Button group */
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
   }
 
-  .name,
-  .email,
-  .ticket-type,
-  .ticket-for,
-  .special-request {
-    grid-column: 1 / -1;
-  } */
-} 
+  .btn-cancel {
+    order: 1;
+  }
+    }
