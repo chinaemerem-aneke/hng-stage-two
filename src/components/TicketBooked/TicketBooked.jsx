@@ -76,13 +76,10 @@ const TicketBooked = ({ setStep }) => {
                   <p>{ticketData?.ticketNumber || "N/A"}</p>
                 </div>
                 <div className="special-request">
-<<<<<<< HEAD
                   <h3>Special request: </h3>
                   <p>{ticketData?.quantity}</p>
-=======
                   <h3>Special request:</h3>
                   <p>{attendeeData?.about || "N/A"}</p>
->>>>>>> ac5f97f276aafe4002f6a3b830f01831cf7cc09f
                 </div>
               </div>
               <img src={BarCode} alt="barcode" className="barcode" />
