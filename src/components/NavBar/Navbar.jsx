@@ -5,11 +5,8 @@ import ticz from '../../assets/ticz.png';
 import arrow from '../../assets/arrow.png';
 
 const Navbar = () => {
-  // Function to handle the "My Tickets" button click
   const handleMyTicketsClick = () => {
-    alert('My Tickets button clicked!'); // Replace with your desired functionality
-    // Example: Navigate to the "My Tickets" page
-    // history.push('/my-tickets'); // If using React Router
+    alert('My Tickets button clicked!');
   };
 
   return (
