@@ -1,5 +1,5 @@
-/* General page styling */
-.ticket-booked {
+.ticket-selection {
+  font-size: .875rem;
   max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
@@ -8,10 +8,8 @@
   background: radial-gradient(52.52% 32.71% at 50% 97.66%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), #02191D;
   color: white;
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
 }
 
-/* Card header */
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -30,14 +28,21 @@
   font-size: 0.875rem;
 }
 
-.progress3 {
-  width: 97.7778%;
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #334155;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+}
+
+.progress1 {
+  width: 33.333%;
   height: 100%;
   background-color: #14b8a6;
   border-radius: 9999px;
 }
 
-/* Main card */
 .main-card {
   border-radius: 12px;
   padding: 24px;
@@ -46,30 +51,6 @@
   background: #08252B;
 }
 
-/* Ticket container */
-.ticket {
-  position: relative;
-  margin-bottom: 24px;
-}
-
-.ticket-background {
-  width: 100%;
-  border-radius: 16px;
-}
-
-.ticket-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  background: rgba(8, 37, 43, 0.9);
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Event details */
 .event-details {
   border-radius: 24px;
   border-right: 2px solid #07373F;
@@ -78,12 +59,13 @@
   background: radial-gradient(57.42% 106.59% at 14.02% 32.06%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), rgba(10, 12, 17, 0.10);
   backdrop-filter: blur(7px);
   text-align: center;
+  margin-bottom: 24px;
   padding: 1rem;
 }
 
 .event-details h1 {
   font-family: "Road Rage", serif;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 400;
   line-height: 100%;
   margin-bottom: .8rem;
@@ -94,161 +76,104 @@
   margin: 8px 0;
 }
 
-/* Barcode container */
-.barcode-container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
+.line {
+  border-bottom: 3px solid #07373F;
+  margin-bottom: 1.2rem;
 }
 
-.barcode {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+.ticket-types {
+  margin-bottom: 24px;
 }
 
-.title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-.title h1 {
-  font-size: 2.5rem;
-  font-family: "Alatsi", serif;
-}
-/* General page styling */
-.ticket-booked {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 40px;
-  border: 1px solid #0E464F;
-  background: radial-gradient(52.52% 32.71% at 50% 97.66%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), #02191D;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
-
-/* Card header */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.ticket-types h3 {
+  font-size: 0.875rem;
   margin-bottom: 1rem;
 }
 
-.card-header h2 {
-  font-size: 1.25rem;
-  margin: 0;
-  font-family: 'JejuMyeongjo', serif;
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  border: 1px solid #07373F;
+  border-radius: 10px;
+  padding: .8rem;
 }
 
-.step {
-  color: #a0a0a0;
-  font-size: 0.875rem;
-}
-
-.progress3 {
-  width: 97.7778%;
-  height: 100%;
-  background-color: #14b8a6;
-  border-radius: 9999px;
-}
-
-/* Main card */
-.main-card {
+.ticket-option {
   border-radius: 12px;
-  padding: 24px;
-  border-radius: 32px;
-  border: 1px solid #0E464F;
-  background: #08252B;
+  border: 1px solid #197686;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Ticket container */
-.ticket {
-  position: relative;
+.ticket-option.selected {
+  background: #12464E;
+  border-color: #3dd8ed;
+}
+
+.ticket-option:hover {
+  background: #12464E;
+  border-color: #3dd8ed;
+}
+
+.ticket-option h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.access-type {
+  color: #FAFAFA;
+  font-size: 0.875rem;
+  margin-bottom: 4px;
+}
+
+.capacity {
+  color: #B3B3B3;
+  font-size: 0.75rem;
+}
+
+.ticket-quantity {
   margin-bottom: 24px;
 }
 
-.ticket-background {
+.ticket-quantity p {
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.ticket-quantity select {
   width: 100%;
-  border-radius: 16px;
+  padding: 8px;
+  background: #08252B;
+  border-radius: 12px;
+  border: 1px solid #07373F;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
 }
 
-.ticket-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  background: rgba(8, 37, 43, 0.9);
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Event details */
-.event-details {
-  border-radius: 24px;
-  border-right: 2px solid #07373F;
-  border-bottom: 2px solid #07373F;
-  border-left: 2px solid #07373F;
-  background: radial-gradient(57.42% 106.59% at 14.02% 32.06%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), rgba(10, 12, 17, 0.10);
-  backdrop-filter: blur(7px);
-  text-align: center;
-  padding: 1rem;
-}
-
-.event-details h1 {
-  font-family: "Road Rage", serif;
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 100%;
-  margin-bottom: .8rem;
-}
-
-.event-details p {
-  color: #a0a0a0;
-  margin: 8px 0;
-}
-
-/* Barcode container */
-.barcode-container {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.barcode {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-.title h1 {
-  font-size: 2.5rem;
-  font-family: "Alatsi", serif;
-}
-
-/* Button group */
 .button-group {
   display: flex;
   gap: 1rem;
 }
 
-/* Mobile responsive */
 @media screen and (max-width: 768px) {
+  .ticket-grid {
+    font-size: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .event-details h1 {
+    font-size: 2rem;
+  }
+
+  .event-details p {
+    font-size: .87rem;
+  }
+
   .button-group {
     flex-direction: column;
   }
@@ -256,20 +181,4 @@
   .btn-cancel {
     order: 1;
   }
-                                                                    }
-/* Button group */
-.button-group {
-  display: flex;
-  gap: 1rem;
 }
-
-/* Mobile responsive */
-@media screen and (max-width: 768px) {
-  .button-group {
-    flex-direction: column;
-  }
-
-  .btn-cancel {
-    order: 1;
-  }
-    }
