@@ -101,3 +101,4 @@ const TicketBooked = ({ setStep }) => {
 };
 
 export default TicketBooked;
+
