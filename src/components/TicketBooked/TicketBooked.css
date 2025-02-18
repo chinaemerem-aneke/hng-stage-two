@@ -1,154 +1,184 @@
-/* General page styling */
-.ticket-booked {
-      background: #06151A;
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-    
-    /* Centering content */
-    .content {
-      text-align: center;
-      max-width: 600px;
-    }
-    
-    /* Heading styles */
-    h1 {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    
-    p {
-      font-size: 14px;
-      color: #b0bec5;
-    }
-    
-    /* Ticket Card */
-    .ticket-card {
-      background: #08252B;
-      border: 1px solid #0E464F;
-      border-radius: 16px;
-      padding: 20px;
-      margin: 20px 0;
-      text-align: center;
-      box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.2);
-      position: relative;
-      width: 100%;
-      max-width: 350px;
-    }
-    
-    /* Event title */
-    .event-title {
-      font-size: 18px;
-      font-weight: bold;
-      color: #14b8a6;
-    }
-    
-    .event-date {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-    
-    /* Ticket Image */
-    .ticket-image {
-      width: 100px;
-      height: 100px;
-      background: #0E464F;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 10px auto;
-    }
-    
-    .ticket-image img {
-      width: 80%;
-      height: auto;
-      border-radius: 6px;
-    }
-    
-    /* Ticket Info */
-    .ticket-info {
-      font-size: 14px;
-      margin-top: 10px;
-    }
-    
-    /* Barcode */
-    .barcode {
-      width: 100%;
-      height: 40px;
-      background: repeating-linear-gradient(
-        90deg,
-        #0E464F,
-        #0E464F 4px,
-        transparent 4px,
-        transparent 8px
-      );
-      margin-top: 15px;
-      border-radius: 4px;
-    }
-    
-    /* Button Group */
+.ticket-selection {
+  font-size: .875rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 40px;
+  border: 1px solid #0E464F;
+  background: radial-gradient(52.52% 32.71% at 50% 97.66%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), #02191D;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h2 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-family: 'JejuMyeongjo', serif;
+}
+
+.step {
+  color: #a0a0a0;
+  font-size: 0.875rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #334155;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+}
+
+.progress1 {
+  width: 33.333%;
+  height: 100%;
+  background-color: #14b8a6;
+  border-radius: 9999px;
+}
+
+.main-card {
+  border-radius: 12px;
+  padding: 24px;
+  border-radius: 32px;
+  border: 1px solid #0E464F;
+  background: #08252B;
+}
+
+.event-details {
+  border-radius: 24px;
+  border-right: 2px solid #07373F;
+  border-bottom: 2px solid #07373F;
+  border-left: 2px solid #07373F;
+  background: radial-gradient(57.42% 106.59% at 14.02% 32.06%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), rgba(10, 12, 17, 0.10);
+  backdrop-filter: blur(7px);
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 1rem;
+}
+
+.event-details h1 {
+  font-family: "Road Rage", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 100%;
+  margin-bottom: .8rem;
+}
+
+.event-details p {
+  color: #a0a0a0;
+  margin: 8px 0;
+}
+
+.line {
+  border-bottom: 3px solid #07373F;
+  margin-bottom: 1.2rem;
+}
+
+.ticket-types {
+  margin-bottom: 24px;
+}
+
+.ticket-types h3 {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  border: 1px solid #07373F;
+  border-radius: 10px;
+  padding: .8rem;
+}
+
+.ticket-option {
+  border-radius: 12px;
+  border: 1px solid #197686;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.ticket-option.selected {
+  background: #12464E;
+  border-color: #3dd8ed;
+}
+
+.ticket-option:hover {
+  background: #12464E;
+  border-color: #3dd8ed;
+}
+
+.ticket-option h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.access-type {
+  color: #FAFAFA;
+  font-size: 0.875rem;
+  margin-bottom: 4px;
+}
+
+.capacity {
+  color: #B3B3B3;
+  font-size: 0.75rem;
+}
+
+.ticket-quantity {
+  margin-bottom: 24px;
+}
+
+.ticket-quantity p {
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.ticket-quantity select {
+  width: 100%;
+  padding: 8px;
+  background: #08252B;
+  border-radius: 12px;
+  border: 1px solid #07373F;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+
 .button-group {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 20px;
-    }
-    
-    /* General Button Styles */
-    button {
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    /* Book Another Ticket Button */
-    .btn1 {
-      background: transparent;
-      border: 1px solid #14b8a6;
-      color: #14b8a6;
-    }
-    
-    .btn1:hover {
-      background: rgba(20, 184, 166, 0.2);
-    }
-    
-    /* Download Ticket Button */
-    .btn2 {
-      background: #14b8a6;
-      color: black;
-    }
-    
-    .btn2:hover {
-      background: #0e7c72;
-    }
-    
-    /* Mobile Responsive */
-    @media screen and (max-width: 480px) {
-      .button-group {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-    
-    
-    /* Responsive
-    @media screen and (max-width: 480px) {
-      .ticket-card {
-        width: 90%;
-      }
-      .button-group {
-        flex-direction: column;
-        gap: 8px;
-      }
-    } */
-    
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .ticket-grid {
+    font-size: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .event-details h1 {
+    font-size: 2rem;
+  }
+
+  .event-details p {
+    font-size: .87rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn-cancel {
+    order: 1;
+  }
+}
