@@ -161,7 +161,16 @@
 
 @media screen and (max-width: 768px) {
   .ticket-grid {
+    font-size: 1rem;
     grid-template-columns: 1fr;
+  }
+
+  .event-details h1 {
+    font-size: 2rem;
+  }
+
+  .event-details p {
+    font-size: .87rem;
   }
 
   .button-group {
