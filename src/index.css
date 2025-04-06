@@ -47,6 +47,13 @@ a {
   animation: spin 1s linear infinite;
 }
 
+.theme-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem auto  .8rem;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -61,3 +68,56 @@ a {
   font-size: 18px;
   color: #14b8a6;
 }
+
+/* Theme changes */
+body {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* DARK THEME (default) */
+body.dark-theme {
+  background-color: #02191D;
+  color: white;
+}
+
+/* LIGHT THEME */
+body.light-theme {
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+
+@media screen and (max-width: 768px) {
+  .theme-toggle {
+    margin-top: 6rem;
+  }
+}
+
+/* .light-theme .main-card,
+.light-theme .ticket-selection,
+.light-theme .ticket-option {
+  background-color: #fff;
+  color: #222;
+  border-color: #ccc;
+}
+
+.light-theme .ticket-option:hover,
+.light-theme .ticket-option.selected {
+  background-color: #e0f7fa;
+  border-color: #22d3ee;
+}
+
+.light-theme .ticket-grid {
+  border-color: #ddd;
+}
+
+.light-theme .event-details {
+  background: #f1f1f1;
+  color: #222;
+}
+
+.light-theme .ticket-quantity select {
+  background-color: #fff;
+  color: #222;
+  border-color: #ccc;
+} */

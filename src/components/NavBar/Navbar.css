@@ -48,7 +48,7 @@ li a:focus {
     top: 0; 
     left: 0; 
     z-index: 1000;
-    margin: 0; 
+    /* margin: 0;  */
     padding: 0.5rem 1rem; 
     border-radius: 0; 
     border: none; 
@@ -56,7 +56,7 @@ li a:focus {
   }
 
   ul {
-    display: none; /* Hide the navigation links */
+    display: none; 
   }
 
   .myTicketBtn {

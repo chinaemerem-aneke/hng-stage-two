@@ -64,7 +64,7 @@ const TicketBooked = ({ setStep }) => {
                   <p>{attendeeData?.name || "N/A"}</p>
                 </div>
                 <div className="email">
-                  <h3>Enter your email*:</h3>
+                  <h3>Enter your email:</h3>
                   <p>{attendeeData?.email || "N/A"}</p>
                 </div>
                 <div className="ticket-type">
@@ -77,8 +77,6 @@ const TicketBooked = ({ setStep }) => {
                 </div>
                 <div className="special-request">
                   <h3>Special request: </h3>
-                  <p>{ticketData?.quantity}</p>
-                  <h3>Special request:</h3>
                   <p>{attendeeData?.about || "N/A"}</p>
                 </div>
               </div>

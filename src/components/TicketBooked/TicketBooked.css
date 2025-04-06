@@ -1,4 +1,4 @@
-.ticket-selection {
+.ticket-booked {
   font-size: .875rem;
   max-width: 600px;
   margin: 2rem auto;
@@ -8,24 +8,42 @@
   background: radial-gradient(52.52% 32.71% at 50% 97.66%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), #02191D;
   color: white;
   font-family: 'Roboto', sans-serif;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.ticket-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.ticket-overlay {
+  position: relative;
+  z-index: 1;
+  background: rgba(2, 25, 29, 0.95);
+  padding: 2rem;
+  border-radius: 32px;
+  border: 1px solid #0E464F;
+}
+
+.ticket-overlay h1 {
+  font-family: "Road Rage", serif;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
+  font-weight: 400;
+  line-height: 100%;
 }
 
-.card-header h2 {
-  font-size: 1.25rem;
-  margin: 0;
-  font-family: 'JejuMyeongjo', serif;
-}
-
-.step {
+.ticket-overlay p {
   color: #a0a0a0;
-  font-size: 0.875rem;
+  margin: 8px 0;
 }
 
 .progress-bar {
@@ -36,149 +54,94 @@
   margin-bottom: 1.5rem;
 }
 
-.progress1 {
-  width: 33.333%;
+.progress3 {
+  width: 97.999%;
   height: 100%;
   background-color: #14b8a6;
   border-radius: 9999px;
 }
 
-.main-card {
-  border-radius: 12px;
-  padding: 24px;
-  border-radius: 32px;
-  border: 1px solid #0E464F;
-  background: #08252B;
-}
-
-.event-details {
-  border-radius: 24px;
-  border-right: 2px solid #07373F;
-  border-bottom: 2px solid #07373F;
-  border-left: 2px solid #07373F;
-  background: radial-gradient(57.42% 106.59% at 14.02% 32.06%, rgba(36, 160, 181, 0.20) 0%, rgba(36, 160, 181, 0.00) 100%), rgba(10, 12, 17, 0.10);
-  backdrop-filter: blur(7px);
-  text-align: center;
-  margin-bottom: 24px;
-  padding: 1rem;
-}
-
-.event-details h1 {
-  font-family: "Road Rage", serif;
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 100%;
-  margin-bottom: .8rem;
-}
-
-.event-details p {
-  color: #a0a0a0;
-  margin: 8px 0;
-}
-
-.line {
-  border-bottom: 3px solid #07373F;
-  margin-bottom: 1.2rem;
-}
-
-.ticket-types {
-  margin-bottom: 24px;
-}
-
-.ticket-types h3 {
-  font-size: 0.875rem;
-  margin-bottom: 1rem;
-}
-
-.ticket-grid {
+.form-details {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  border: 1px solid #07373F;
-  border-radius: 10px;
-  padding: .8rem;
-}
-
-.ticket-option {
-  border-radius: 12px;
-  border: 1px solid #197686;
+  border: 1px solid #334155;
+  border-radius: .5em;
   padding: 1rem;
+}
+
+.form-details h3,
+.form-details p {
   text-align: left;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.ticket-option.selected {
-  background: #12464E;
-  border-color: #3dd8ed;
-}
-
-.ticket-option:hover {
-  background: #12464E;
-  border-color: #3dd8ed;
-}
-
-.ticket-option h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-
-.access-type {
-  color: #FAFAFA;
-  font-size: 0.875rem;
-  margin-bottom: 4px;
-}
-
-.capacity {
-  color: #B3B3B3;
-  font-size: 0.75rem;
-}
-
-.ticket-quantity {
-  margin-bottom: 24px;
-}
-
-.ticket-quantity p {
-  font-size: 0.875rem;
-  margin-bottom: 8px;
-}
-
-.ticket-quantity select {
+.barcode {
+  margin-top: 1.5rem;
   width: 100%;
-  padding: 8px;
-  background: #08252B;
-  border-radius: 12px;
-  border: 1px solid #07373F;
-  outline: none;
-  color: #fff;
-  cursor: pointer;
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
 }
 
 .button-group {
+  margin-top: 2rem;
   display: flex;
+  justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn1, .btn2 {
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn1 {
+  background: transparent;
+  border: 1px solid #3dd8ed;
+  color: #3dd8ed;
+}
+
+.btn1:hover {
+  background: rgba(61, 216, 237, 0.1);
+}
+
+.btn2 {
+  background: #3dd8ed;
+  color: #000;
+  border: none;
+}
+
+.btn2:hover {
+  background: #50e4f5;
 }
 
 @media screen and (max-width: 768px) {
-  .ticket-grid {
-    font-size: 1rem;
-    grid-template-columns: 1fr;
+  .ticket {
+    padding: 1.5rem;
+    border-radius: 24px;
   }
 
-  .event-details h1 {
+  .ticket-overlay h1 {
     font-size: 2rem;
   }
 
-  .event-details p {
-    font-size: .87rem;
+  .barcode {
+    max-width: 180px;
+    margin-top: 1rem;
   }
 
   .button-group {
     flex-direction: column;
+    align-items: center;
   }
 
-  .btn-cancel {
-    order: 1;
+  .btn1, .btn2 {
+    width: 100%;
+    text-align: center;
   }
 }

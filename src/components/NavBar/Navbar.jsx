@@ -15,6 +15,7 @@ const Navbar = () => {
         <img src={logo} alt="Logo" />
         <img src={ticz} alt="Ticz" />
       </div>
+
       <ul>
         <li><a href="#">Event</a></li>
         <li><a href="#">My Tickets</a></li>
